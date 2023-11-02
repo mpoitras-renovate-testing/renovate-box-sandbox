@@ -11,7 +11,7 @@
         "eks-node-ami-version.yml"
       ],
       "matchStrings": [
-        "/#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?amiFilter\\s*=\\s*.*?amazon-eks-node-(?<currentValue>.*)-\\*"
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?amiFilter\\s*=\\s*.*?amazon-eks-node-(?<currentValue>.*)-\\*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{/if}}"
     }
