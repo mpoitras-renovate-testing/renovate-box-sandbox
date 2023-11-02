@@ -1,3 +1,30 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update Kubernetes version for Amazon EKS in for AMI Renovate Regexp comment",
+      "fileMatch": [
+        "eks-node-ami-version.yml"
+      ],
+      "matchStrings": [
+        "/#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?amiFilter\\s*=\\s*.*?amazon-eks-node-(?<currentValue>.*)-\\*/m"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "endoflife-date"
+      ],
+      "matchPackageNames": [
+        "amazon-eks"
+      ],
+      "extractVersion": "^(?<version>.*)-eks.+$"
+    }
+  ]
 }
