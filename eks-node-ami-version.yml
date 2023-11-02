@@ -1,0 +1,5 @@
+eks_ami_id:
+  # renovate: datasource=endoflife-date depName=amazon-eks versioning=loose
+  # amiFilter=[{"Name":"owner-id","Values":["602401143452"]},{"Name":"name","Values":["amazon-eks-node-1.26-*"]},{"region":"eu-west-1"}]
+  # currentImageName=unknown
+  eu-west-1: ami-12345678901234561
